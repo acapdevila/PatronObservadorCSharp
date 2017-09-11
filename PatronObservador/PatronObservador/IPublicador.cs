@@ -5,6 +5,6 @@
        void RegistrarObservador(IObservador observador);
        void QuitarObservador(IObservador observador);
 
-       void NotificarSuceso();
+       void Notificar();
    }
 }

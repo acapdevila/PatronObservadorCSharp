@@ -10,6 +10,20 @@ namespace PatronObservador
     {
         static void Main(string[] args)
         {
+            EstacionMetereologica estacionMetereologica = new EstacionMetereologica();
+
+            DispositivoTiempoActual dispositivoTiempoActual = new DispositivoTiempoActual();
+            DispositivoEstadisticas dispositivoEstadisticas = new DispositivoEstadisticas();
+            DispositivoPredictivo dispositivoPredictivo = new DispositivoPredictivo();
+            
+            estacionMetereologica.HaCambiadoElTiempo += dispositivoTiempoActual.ActualizarPantallaDipositivo;
+            estacionMetereologica.HaCambiadoElTiempo += dispositivoEstadisticas.AñadirDatosParaLasEstadisticas;
+            estacionMetereologica.HaCambiadoElTiempo += dispositivoPredictivo.AñadirDatosDePrediccion;
+
+            estacionMetereologica.AumentarLaTemperaturaEnGrados(1);
+            
+            Console.ReadLine();
+
         }
     }
 }
